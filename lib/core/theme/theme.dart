@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fate_developer_case/core/constants/colors.dart';
 import 'package:fate_developer_case/core/constants/typographies.dart';
-import 'package:flutter_developer_task/core/constants/fonts.gen.dart';
+import 'package:fate_developer_case/core/constants/fonts.gen.dart';
 
 class AppTheme extends ThemeExtension<AppTheme> {
   const AppTheme({
