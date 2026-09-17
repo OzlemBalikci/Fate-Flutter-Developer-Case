@@ -5,6 +5,9 @@ import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 final GetIt getIt = GetIt.instance;
 
 @InjectableInit()
@@ -14,6 +17,12 @@ Future<void> configureDependencies() async {
 
 @module
 abstract class RegisterModule {
+  @singleton
+  FirebaseAuth get firebaseAuth => FirebaseAuth.instance;
+
+  @singleton
+  FirebaseFirestore get firestore => FirebaseFirestore.instance;
+
   @preResolve
   @singleton
   Future<SharedPreferences> get prefs => SharedPreferences.getInstance();
