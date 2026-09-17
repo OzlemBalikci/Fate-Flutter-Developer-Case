@@ -7,3 +7,5 @@
 
 // ignore_for_file: type=lint
 // coverage:ignore-file
+
+part of 'navigation.dart';
