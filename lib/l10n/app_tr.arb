@@ -1,0 +1,8 @@
+{
+  "@@locale": "tr",
+  "appName": "Fate Developer Case",
+  "ok": "Tamam",
+  "cancel": "İptal",
+  "retry": "Tekrar dene",
+  "errorGeneric": "Bir şeyler ters gitti. Lütfen tekrar dene."
+}
