@@ -1,4 +1,4 @@
-import 'package:fate_developer_case/features/auth/domain/repositories/onboarding_repository.dart';
+import 'package:fate_developer_case/features/onboarding/domain/repositories/onboarding_repository.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

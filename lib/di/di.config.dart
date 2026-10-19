@@ -15,16 +15,17 @@ import 'package:dio/dio.dart' as _i361;
 import 'package:fate_developer_case/di/di.dart' as _i500;
 import 'package:fate_developer_case/features/auth/data/repositories/firebase_auth_repository.dart'
     as _i58;
-import 'package:fate_developer_case/features/auth/data/repositories/firestore_user_repository.dart'
-    as _i508;
-import 'package:fate_developer_case/features/auth/data/repositories/prefs_onboarding_repository.dart'
-    as _i597;
 import 'package:fate_developer_case/features/auth/domain/repositories/auth_repository.dart'
     as _i634;
-import 'package:fate_developer_case/features/auth/domain/repositories/onboarding_repository.dart'
-    as _i444;
-import 'package:fate_developer_case/features/auth/domain/repositories/user_repository.dart'
-    as _i259;
+import 'package:fate_developer_case/features/onboarding/data/repositories/prefs_onboarding_repository.dart'
+    as _i718;
+import 'package:fate_developer_case/features/onboarding/domain/repositories/onboarding_repository.dart'
+    as _i252;
+import 'package:fate_developer_case/features/user/data/repositories/firestore_user_repository.dart'
+    as _i234;
+import 'package:fate_developer_case/features/user/domain/repositories/user_repository.dart'
+    as _i451;
+import 'package:fate_developer_case/router/navigation.dart' as _i358;
 import 'package:firebase_auth/firebase_auth.dart' as _i59;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
@@ -45,11 +46,12 @@ extension GetItInjectableX on _i174.GetIt {
       preResolve: true,
     );
     gh.singleton<_i361.Dio>(() => registerModule.dio());
-    gh.lazySingleton<_i259.UserRepository>(
-      () => _i508.FirestoreUserRepository(gh<_i974.FirebaseFirestore>()),
+    gh.lazySingleton<_i358.AppRouter>(() => _i358.AppRouter());
+    gh.lazySingleton<_i451.UserRepository>(
+      () => _i234.FirestoreUserRepository(gh<_i974.FirebaseFirestore>()),
     );
-    gh.lazySingleton<_i444.OnboardingRepository>(
-      () => _i597.PrefsOnboardingRepository(gh<_i460.SharedPreferences>()),
+    gh.lazySingleton<_i252.OnboardingRepository>(
+      () => _i718.PrefsOnboardingRepository(gh<_i460.SharedPreferences>()),
     );
     gh.lazySingleton<_i634.AuthRepository>(
       () => _i58.FirebaseAuthRepository(gh<_i59.FirebaseAuth>()),
