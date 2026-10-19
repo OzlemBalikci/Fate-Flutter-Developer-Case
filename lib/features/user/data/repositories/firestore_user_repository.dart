@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fate_developer_case/features/auth/domain/repositories/user_repository.dart';
+import 'package:fate_developer_case/features/user/domain/repositories/user_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: UserRepository)
@@ -20,10 +20,9 @@ class FirestoreUserRepository implements UserRepository {
   }
 
   @override
-  Stream<bool> watchIsPro(String uid) =>
-      _doc(uid)
-          .snapshots()
-          .map((snap) => snap.data()?['isPro'] as bool? ?? false);
+  Stream<bool> watchIsPro(String uid) => _doc(uid)
+      .snapshots()
+      .map((snap) => snap.data()?['isPro'] as bool? ?? false);
 
   @override
   Future<void> setPro(String uid) => _doc(uid).update({'isPro': true});
