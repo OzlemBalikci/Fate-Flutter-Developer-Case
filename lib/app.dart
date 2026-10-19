@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fate_developer_case/core/constants/extensions.dart';
+import 'package:fate_developer_case/di/di.dart';
+import 'package:fate_developer_case/router/navigation.dart';
 import 'package:fate_developer_case/core/theme/dark_theme.dart';
 import 'package:fate_developer_case/core/theme/light_theme.dart';
 import 'package:fate_developer_case/l10n/app_localizations.dart';
@@ -24,6 +26,7 @@ class FateDeveloperCaseApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
+        routerConfig: getIt<AppRouter>().config(),
       ),
     );
   }
