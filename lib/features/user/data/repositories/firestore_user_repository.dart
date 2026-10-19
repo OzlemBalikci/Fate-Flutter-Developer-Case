@@ -20,9 +20,10 @@ class FirestoreUserRepository implements UserRepository {
   }
 
   @override
-  Stream<bool> watchIsPro(String uid) => _doc(uid)
-      .snapshots()
-      .map((snap) => snap.data()?['isPro'] as bool? ?? false);
+  Stream<bool> watchIsPro(String uid) =>
+      _doc(uid)
+          .snapshots()
+          .map((snap) => snap.data()?['isPro'] as bool? ?? false);
 
   @override
   Future<void> setPro(String uid) => _doc(uid).update({'isPro': true});
