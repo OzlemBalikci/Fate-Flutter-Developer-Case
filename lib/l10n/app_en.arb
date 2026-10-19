@@ -1,0 +1,11 @@
+{
+  "@@locale": "en",
+  "appName": "Fate Developer Case",
+  "@appName": {
+    "description": "Application title shown in the task switcher and app bar"
+  },
+  "ok": "OK",
+  "cancel": "Cancel",
+  "retry": "Retry",
+  "errorGeneric": "Something went wrong. Please try again."
+}
